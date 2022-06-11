@@ -33,7 +33,7 @@ const Footer = () => {
           <p className={styles.text}>
             1614 W. Caroll St #125.
             <br /> NewYork, 85022
-            <br /> (602) 867-1013
+            <br /> (602) 867-1012
           </p>
         </div>
         <div className={styles.card}>
