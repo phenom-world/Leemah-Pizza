@@ -66,71 +66,40 @@ const handleRemoveExtra =(index) =>{
         </div>
         <div className={styles.item}>
           <label className={styles.label}>Title</label>
-          <input
-            className={styles.input}
-            type="text"
-            onChange={(e) => setTitle(e.target.value)}
-          />
+          <input className={styles.input} type="text" onChange={(e) => setTitle(e.target.value)} />
         </div>
         <div className={styles.item}>
           <label className={styles.label}>Desc</label>
-          <textarea
-            rows={4}
-            type="text"
-            onChange={(e) => setDesc(e.target.value)}
-          />
+          <textarea rows={4} type="text" onChange={(e) => setDesc(e.target.value)} />
         </div>
         <div className={styles.item}>
           <label className={styles.label}>Prices</label>
           <div className={styles.priceContainer}>
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Small"
-              onChange={(e) => changePrice(e, 0)}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Medium"
-              onChange={(e) => changePrice(e, 1)}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Large"
-              onChange={(e) => changePrice(e, 2)}
-            />
+            <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder="Small" onChange={(e) => changePrice(e, 0)} />
+            <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder="Medium" onChange={(e) => changePrice(e, 1)} />
+            <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder="Large" onChange={(e) => changePrice(e, 2)} />
           </div>
         </div>
         <div className={styles.item}>
           <label className={styles.label}>Extra</label>
           <div className={styles.extra}>
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="text"
-              placeholder="Item"
-              name="text"
-              onChange={handleExtraInput}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Price"
-              name="price"
-              onChange={handleExtraInput}
-            />
+            <input className={`${styles.input} ${styles.inputSm}`} type="text" placeholder="Item" name="text" onChange={handleExtraInput} />
+            <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder="Price" name="price" onChange={handleExtraInput} />
             <button className={styles.extraButton} onClick={handleExtra}>
               Add
             </button>
           </div>
           <div className={styles.extraItems}>
             {extraOptions.map((option, i) => (
-              <div className={styles.extrabox}><span key={option.text} className={styles.extraItem}>
-                {option.text}
-              </span> <span className={styles.remove} onClick={()=>handleRemoveExtra(i)}>x</span>
+              <div className={styles.extrabox} key={option.text}>
+                <span key={option.text} className={styles.extraItem}>
+                  {option.text}
+                </span>{" "}
+                <span className={styles.remove} onClick={() => handleRemoveExtra(i)}>
+                  x
+                </span>
               </div>
-            ))} 
+            ))}
           </div>
         </div>
         <button className={styles.addButton} onClick={handleCreate}>
